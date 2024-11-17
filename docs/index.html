@@ -1,0 +1,1154 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="description"
+            content="Documentation for the Online Streaming Platform API"
+        >
+    <title>Online Streaming Platform API Documentation</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-9c19b03a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-024da600.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#register-a-new-user" class="toc-h2 toc-link" data-title="Register a New User">Register a New User</a>
+                  </li>
+                  <li>
+                    <a href="#user-login" class="toc-h2 toc-link" data-title="User Login">User Login</a>
+                  </li>
+                  <li>
+                    <a href="#get-current-user" class="toc-h2 toc-link" data-title="Get Current User">Get Current User</a>
+                  </li>
+                  <li>
+                    <a href="#logout-user" class="toc-h2 toc-link" data-title="Logout User">Logout User</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#content" class="toc-h1 toc-link" data-title="Content">Content</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-content-list" class="toc-h2 toc-link" data-title="Get Content List">Get Content List</a>
+                  </li>
+                  <li>
+                    <a href="#get-content-details" class="toc-h2 toc-link" data-title="Get Content Details">Get Content Details</a>
+                  </li>
+                  <li>
+                    <a href="#stream-content" class="toc-h2 toc-link" data-title="Stream Content">Stream Content</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#genres" class="toc-h1 toc-link" data-title="Genres">Genres</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-genres" class="toc-h2 toc-link" data-title="Get Genres">Get Genres</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#error-codes" class="toc-h1 toc-link" data-title="Error Codes">Error Codes</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#common-error-codes" class="toc-h2 toc-link" data-title="Common Error Codes">Common Error Codes</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#notes-and-best-practices" class="toc-h1 toc-link" data-title="Notes and Best Practices">Notes and Best Practices</a>
+          </li>
+          <li>
+            <a href="#conclusion" class="toc-h1 toc-link" data-title="Conclusion">Conclusion</a>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/aadarshabastola/online-streaming-platform'>Project Repository</a></li>
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Online Streaming Platform API documentation! This API allows you to interact with our streaming service, enabling functionalities such as user authentication, content retrieval, and video streaming.</p>
+
+<p>We have language examples in Shell and JavaScript. You can switch the programming language of the examples with the tabs on the right.</p>
+
+<p>All API requests should be made to the following base URL:</p>
+
+<p><code>http://localhost:3000</code></p>
+
+<aside class="notice">
+  This will obviously change based on what port you set when running the server.
+</aside>
+<h1 id='authentication'>Authentication</h1><h2 id='register-a-new-user'>Register a New User</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>  curl <span class="nt">-X</span> POST <span class="s2">"http://localhost:3000/api/users"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{
+      "username": "john_doe",
+      "email": "john@example.com",
+      "password": "securepassword123"
+    }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">axios</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">"</span><span class="s2">http://localhost:3000/api/users</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">username</span><span class="p">:</span> <span class="dl">"</span><span class="s2">john_doe</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">email</span><span class="p">:</span> <span class="dl">"</span><span class="s2">john@example.com</span><span class="dl">"</span><span class="p">,</span>
+    <span class="na">password</span><span class="p">:</span> <span class="dl">"</span><span class="s2">securepassword123</span><span class="dl">"</span><span class="p">,</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+  <span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Registration successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1a2b3d4-e5f6-7890-abcd-ef1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john_doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@example.com"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint registers a new user in the system.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST /api/users</code></p>
+<h3 id='request-body-parameters'>Request Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>Yes</td>
+<td>The user&#39;s chosen username.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Yes</td>
+<td>The user&#39;s email address.</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>Yes</td>
+<td>The user&#39;s password.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3>
+<ul>
+<li><p><strong>201 Created</strong></p>
+
+<ul>
+<li>Returns a success message and the user&#39;s information.</li>
+</ul></li>
+<li><p><strong>Error Responses</strong></p>
+
+<ul>
+<li><strong>400 Bad Request</strong></li>
+</ul></li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER_ALREADY_EXISTS"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A user with this email already exists."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='user-login'>User Login</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"http://localhost:3000/api/sessions"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+    "email": "john@example.com",
+    "password": "securepassword123"
+  }'</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://localhost:3000/api/sessions</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">email</span><span class="p">:</span> <span class="dl">'</span><span class="s1">john@example.com</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">password</span><span class="p">:</span> <span class="dl">'</span><span class="s1">securepassword123</span><span class="dl">'</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Login successful"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1a2b3d4-e5f6-7890-abcd-ef1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john_doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@example.com"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint authenticates a user and returns a JWT token for authorization.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST /api/sessions</code></p>
+<h3 id='request-body-parameters-2'>Request Body Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>Yes</td>
+<td>The user&#39;s email address.</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>Yes</td>
+<td>The user&#39;s password.</td>
+</tr>
+</tbody></table>
+<h3 id='response-2'>Response</h3>
+<ul>
+<li><p><strong>200 OK</strong></p>
+
+<ul>
+<li>Returns a success message, authentication token, and user information.</li>
+</ul></li>
+<li><p><strong>Error Responses</strong></p>
+
+<ul>
+<li><strong>401 Unauthorized</strong></li>
+</ul></li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUTH_INVALID_CREDENTIALS"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid email or password."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='get-current-user'>Get Current User</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"http://localhost:3000/api/users/me"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;your_jwt_token&gt;"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://localhost:3000/api/users/me</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bearer &lt;your_jwt_token&gt;</span><span class="dl">'</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c1a2b3d4-e5f6-7890-abcd-ef1234567890"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john_doe"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john@example.com"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves the authenticated user&#39;s information.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET /api/users/me</code></p>
+<h3 id='headers'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Yes</td>
+<td>Must be <code>Bearer &lt;jwt_token&gt;</code>.</td>
+</tr>
+</tbody></table>
+<h3 id='response-3'>Response</h3>
+<ul>
+<li><p><strong>200 OK</strong></p>
+
+<ul>
+<li>Returns the user&#39;s information.</li>
+</ul></li>
+<li><p><strong>Error Responses</strong></p>
+
+<ul>
+<li><strong>401 Unauthorized</strong></li>
+</ul></li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUTH_INVALID_TOKEN"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid or expired authentication token."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='logout-user'>Logout User</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="s2">"http://localhost:3000/api/sessions/me"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;your_jwt_token&gt;"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">axios</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://localhost:3000/api/sessions/me</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bearer &lt;your_jwt_token&gt;</span><span class="dl">'</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Logout successful."</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint logs out the authenticated user by invalidating the session token.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>DELETE /api/sessions/me</code></p>
+<h3 id='headers-2'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Yes</td>
+<td>Must be <code>Bearer &lt;jwt_token&gt;</code>.</td>
+</tr>
+</tbody></table>
+<h3 id='response-4'>Response</h3>
+<ul>
+<li><p><strong>200 OK</strong></p>
+
+<ul>
+<li>Returns a success message.</li>
+</ul></li>
+<li><p><strong>Error Responses</strong></p>
+
+<ul>
+<li><strong>401 Unauthorized</strong></li>
+</ul></li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUTH_INVALID_TOKEN"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid or expired authentication token."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='content'>Content</h1><h2 id='get-content-list'>Get Content List</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"http://localhost:3000/api/contents?genre=Action&amp;sort_by=release_date&amp;order=desc&amp;page=1&amp;limit=10"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://localhost:3000/api/contents</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">params</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">genre</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Action</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">sort_by</span><span class="p">:</span> <span class="dl">'</span><span class="s1">release_date</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">order</span><span class="p">:</span> <span class="dl">'</span><span class="s1">desc</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">page</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">limit</span><span class="p">:</span> <span class="mi">10</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"total_pages"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"total_items"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uuid"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Action Movie"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"genres"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Action"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Adventure"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"cast"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Actor One"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Actor Two"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"synopsis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An exciting action-packed adventure."</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"release_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-01"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"director"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Director Name"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movie"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"average_rating"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"thumbnail_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/thumbnails/action_movie.jpg"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a list of content items, with optional filtering, sorting, and pagination.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET /api/contents</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>search</td>
+<td>string</td>
+<td>No</td>
+<td>Search term for content titles.</td>
+</tr>
+<tr>
+<td>genre</td>
+<td>string</td>
+<td>No</td>
+<td>Filter by genre.</td>
+</tr>
+<tr>
+<td>actor</td>
+<td>string</td>
+<td>No</td>
+<td>Filter by cast member.</td>
+</tr>
+<tr>
+<td>content_type</td>
+<td>string</td>
+<td>No</td>
+<td><code>movie</code>, <code>tv_show</code>, or <code>documentary</code>.</td>
+</tr>
+<tr>
+<td>release_year</td>
+<td>integer</td>
+<td>No</td>
+<td>Filter by release year.</td>
+</tr>
+<tr>
+<td>sort_by</td>
+<td>string</td>
+<td>No</td>
+<td><code>title</code>, <code>release_date</code>, <code>average_rating</code>.</td>
+</tr>
+<tr>
+<td>order</td>
+<td>string</td>
+<td>No</td>
+<td><code>asc</code> or <code>desc</code>. Default is <code>asc</code>.</td>
+</tr>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>No</td>
+<td>Page number for pagination. Default is <code>1</code>.</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>integer</td>
+<td>No</td>
+<td>Number of items per page. Default is <code>20</code>.</td>
+</tr>
+</tbody></table>
+<h3 id='response-5'>Response</h3>
+<ul>
+<li><p><strong>200 OK</strong></p>
+
+<ul>
+<li>Returns a paginated list of content items.</li>
+</ul></li>
+<li><p><strong>Error Responses</strong></p>
+
+<ul>
+<li><strong>400 Bad Request</strong></li>
+</ul></li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INVALID_QUERY_PARAMETERS"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"One or more query parameters are invalid."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='get-content-details'>Get Content Details</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"http://localhost:3000/api/contents/{id}"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://localhost:3000/api/contents/{id}</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"uuid"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Action Movie"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"genres"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Action"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Adventure"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"cast"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Actor One"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Actor Two"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"synopsis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"An exciting action-packed adventure."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"release_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-11-17"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"director"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Director Name"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"content_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"movie"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">120</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"average_rating"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.5</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reviews"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_uuid"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reviewer1"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Loved it!"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-11-17T03:30:21Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"video_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:3000/videos/{id}"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves detailed information about a specific content item.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET /api/contents/{id}</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Yes</td>
+<td>The UUID of the content item.</td>
+</tr>
+</tbody></table>
+<h3 id='response-6'>Response</h3>
+<ul>
+<li><p><strong>200 OK</strong></p>
+
+<ul>
+<li>Returns the content details.</li>
+</ul></li>
+<li><p><strong>Error Responses</strong></p>
+
+<ul>
+<li><strong>404 Not Found</strong></li>
+</ul></li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONTENT_NOT_FOUND"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content with the specified ID was not found."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='stream-content'>Stream Content</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"http://localhost:3000/api/contents/{id}/stream"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;your_jwt_token&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Range: bytes=0-"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://localhost:3000/api/contents/{id}/stream</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
+    <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bearer &lt;your_jwt_token&gt;</span><span class="dl">'</span><span class="p">,</span>
+    <span class="dl">'</span><span class="s1">Range</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bytes=0-</span><span class="dl">'</span>
+  <span class="p">},</span>
+  <span class="na">responseType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">stream</span><span class="dl">'</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="dl">'</span><span class="s1">video.mp4</span><span class="dl">'</span><span class="p">));</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<aside class="notice"
+  The response will be a video stream.
+</aside>
+
+<p>This endpoint streams video content to the authenticated user.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET /api/contents/{id}/stream</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Yes</td>
+<td>The UUID of the content item.</td>
+</tr>
+</tbody></table>
+<h3 id='headers-3'>Headers</h3>
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>Yes</td>
+<td>Must be <code>Bearer &lt;jwt_token&gt;</code>.</td>
+</tr>
+<tr>
+<td>Range</td>
+<td>No</td>
+<td>Specifies the byte range to stream. Used for partial content.</td>
+</tr>
+</tbody></table>
+<h3 id='response-7'>Response</h3>
+<ul>
+<li><p><strong>206 Partial Content</strong></p>
+
+<ul>
+<li>Returns a chunk of the video content based on the <code>Range</code> header.</li>
+</ul></li>
+<li><p><strong>200 OK</strong></p>
+
+<ul>
+<li>Returns the full video content if <code>Range</code> header is not specified.</li>
+</ul></li>
+<li><p><strong>Error Responses</strong></p>
+
+<ul>
+<li><strong>401 Unauthorized</strong></li>
+</ul></li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUTH_REQUIRED"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Authentication is required to access this resource."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>404 Not Found</strong></li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONTENT_NOT_FOUND"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content with the specified ID was not found."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<ul>
+<li><strong>416 Range Not Satisfiable</strong></li>
+</ul>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INVALID_RANGE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The requested range is not satisfiable."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h1 id='genres'>Genres</h1><h2 id='get-genres'>Get Genres</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"http://localhost:3000/api/genres"</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
+
+<span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://localhost:3000/api/genres</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"genres"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Action"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Comedy"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Drama"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Documentary"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Horror"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Romance"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a list of available genres.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET /api/genres</code></p>
+<h3 id='response-8'>Response</h3>
+<ul>
+<li><p><strong>200 OK</strong></p>
+
+<ul>
+<li>Returns an array of genre strings.</li>
+</ul></li>
+</ul>
+<h1 id='error-codes'>Error Codes</h1>
+<p>All error responses will return a standardized error format:</p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR_CODE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Detailed error message."</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='common-error-codes'>Common Error Codes</h2>
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>HTTP Status</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>AUTH_INVALID_CREDENTIALS</td>
+<td>401</td>
+<td>Invalid email or password.</td>
+</tr>
+<tr>
+<td>AUTH_INVALID_TOKEN</td>
+<td>401</td>
+<td>Invalid or expired authentication token.</td>
+</tr>
+<tr>
+<td>AUTH_REQUIRED</td>
+<td>401</td>
+<td>Authentication is required to access this resource.</td>
+</tr>
+<tr>
+<td>USER_ALREADY_EXISTS</td>
+<td>400</td>
+<td>A user with this email already exists.</td>
+</tr>
+<tr>
+<td>CONTENT_NOT_FOUND</td>
+<td>404</td>
+<td>Content with the specified ID was not found.</td>
+</tr>
+<tr>
+<td>INVALID_QUERY_PARAMETERS</td>
+<td>400</td>
+<td>One or more query parameters are invalid.</td>
+</tr>
+<tr>
+<td>INVALID_RANGE</td>
+<td>416</td>
+<td>The requested byte range is not satisfiable.</td>
+</tr>
+</tbody></table>
+<h1 id='notes-and-best-practices'>Notes and Best Practices</h1>
+<ul>
+<li><strong>Authentication</strong>: Always ensure that you include the <code>Authorization</code> header when accessing protected resources.</li>
+<li><strong>Pagination</strong>: Use the <code>page</code> and <code>limit</code> query parameters to control pagination in content listings.</li>
+</ul>
+
+<aside class="notice">
+  Please replace <code>{id}</code> with the actual content ID and <code>&lt;your_jwt_token&gt;</code> with your actual JWT token.
+</aside>
+
+<hr>
+<h1 id='conclusion'>Conclusion</h1>
+<p>Hope this is helpful. Let me know if you have any questions or would like me to make adjustments to the API!</p>
+<h1 id='errors'>Errors</h1>
+<aside class="notice">
+This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+</aside>
+
+<p>The Kittn API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified kitten could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The kitten requested has been removed from our servers.</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
