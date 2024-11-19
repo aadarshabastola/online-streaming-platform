@@ -343,7 +343,7 @@
                     <a href="#get-content-details" class="toc-h2 toc-link" data-title="Get Content Details">Get Content Details</a>
                   </li>
                   <li>
-                    <a href="#stream-content" class="toc-h2 toc-link" data-title="Stream Content">Stream Content</a>
+                    <a href="#get-video-url" class="toc-h2 toc-link" data-title="Get Video URL">Get Video URL</a>
                   </li>
               </ul>
           </li>
@@ -883,33 +883,32 @@
     </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content with the specified ID was not found."</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h2 id='stream-content'>Stream Content</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"http://localhost:3000/api/contents/{id}/stream"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;your_jwt_token&gt;"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Range: bytes=0-"</span>
+</span></code></pre></div><h2 id='get-video-url'>Get Video URL</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"http://localhost:3000/api/contents/{id}/video"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer &lt;your_jwt_token&gt;"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://localhost:3000/api/contents/{id}/stream</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
+<span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://localhost:3000/api/contents/{id}/video</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">headers</span><span class="p">:</span> <span class="p">{</span>
-    <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bearer &lt;your_jwt_token&gt;</span><span class="dl">'</span><span class="p">,</span>
-    <span class="dl">'</span><span class="s1">Range</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bytes=0-</span><span class="dl">'</span>
-  <span class="p">},</span>
-  <span class="na">responseType</span><span class="p">:</span> <span class="dl">'</span><span class="s1">stream</span><span class="dl">'</span>
+    <span class="dl">'</span><span class="s1">Authorization</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Bearer &lt;your_jwt_token&gt;</span><span class="dl">'</span>
+  <span class="p">}</span>
 <span class="p">})</span>
 <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">fs</span><span class="p">.</span><span class="nx">createWriteStream</span><span class="p">(</span><span class="dl">'</span><span class="s1">video.mp4</span><span class="dl">'</span><span class="p">));</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">url</span><span class="p">);</span>
 <span class="p">})</span>
 <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div>
-<aside class="notice"
-  The response will be a video stream.
-</aside>
-
-<p>This endpoint streams video content to the authenticated user.</p>
+<blockquote>
+<p>Response Example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.youtube.com/watch?v=JkaxUblCGz0"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint returns the URL where the video content can be accessed.</p>
 <h3 id='http-request-7'>HTTP Request</h3>
-<p><code>GET /api/contents/{id}/stream</code></p>
+<p><code>GET /api/contents/{id}/video</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -939,57 +938,38 @@
 <td>Yes</td>
 <td>Must be <code>Bearer &lt;jwt_token&gt;</code>.</td>
 </tr>
-<tr>
-<td>Range</td>
-<td>No</td>
-<td>Specifies the byte range to stream. Used for partial content.</td>
-</tr>
 </tbody></table>
 <h3 id='response-7'>Response</h3>
 <ul>
-<li><p><strong>206 Partial Content</strong></p>
-
-<ul>
-<li>Returns a chunk of the video content based on the <code>Range</code> header.</li>
-</ul></li>
 <li><p><strong>200 OK</strong></p>
 
 <ul>
-<li>Returns the full video content if <code>Range</code> header is not specified.</li>
+<li>Returns a URL to the video content.</li>
 </ul></li>
 <li><p><strong>Error Responses</strong></p>
 
 <ul>
-<li><strong>401 Unauthorized</strong></li>
+<li><strong>401 Unauthorized</strong>
+<code>json
+{
+&quot;error&quot;: {
+&quot;code&quot;: &quot;AUTH_REQUIRED&quot;,
+&quot;message&quot;: &quot;Authentication is required to access this resource.&quot;
+}
+}
+</code></li>
+<li><strong>404 Not Found</strong>
+<code>json
+{
+&quot;error&quot;: {
+&quot;code&quot;: &quot;CONTENT_NOT_FOUND&quot;,
+&quot;message&quot;: &quot;Content with the specified ID was not found.&quot;
+}
+}
+</code></li>
 </ul></li>
 </ul>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUTH_REQUIRED"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Authentication is required to access this resource."</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<ul>
-<li><strong>404 Not Found</strong></li>
-</ul>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONTENT_NOT_FOUND"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Content with the specified ID was not found."</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<ul>
-<li><strong>416 Range Not Satisfiable</strong></li>
-</ul>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INVALID_RANGE"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The requested range is not satisfiable."</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div><h1 id='genres'>Genres</h1><h2 id='get-genres'>Get Genres</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"http://localhost:3000/api/genres"</span>
+<h1 id='genres'>Genres</h1><h2 id='get-genres'>Get Genres</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"http://localhost:3000/api/genres"</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">axios</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://localhost:3000/api/genres</span><span class="dl">'</span><span class="p">)</span>
