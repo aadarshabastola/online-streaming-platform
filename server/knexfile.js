@@ -5,13 +5,21 @@ require("dotenv").config();
 module.exports = {
   development: {
     client: "postgresql",
-    connection: {
-      host: process.env.DB_HOST || "localhost",
-      port: process.env.DB_PORT || 5432,
-      database: process.env.DB_NAME || "streaming_platform",
-      user: process.env.DB_USER,
-      ...(process.env.DB_PASSWORD ? { password: String(process.env.DB_PASSWORD) } : {}),
-    },
+    connection: (() => {
+      const config = {
+        host: process.env.DB_HOST || "localhost",
+        port: process.env.DB_PORT || 5432,
+        database: process.env.DB_NAME || "streaming_platform",
+        user: process.env.DB_USER,
+      };
+
+      if (process.env.DB_PASSWORD) {
+        config.password = String(process.env.DB_PASSWORD);
+      }
+
+      console.log("DB Config:", JSON.stringify(config, null, 2));
+      return config;
+    })(),
     pool: {
       min: 2,
       max: 10,
@@ -26,14 +34,22 @@ module.exports = {
   },
   production: {
     client: "postgresql",
-    connection: {
-      host: process.env.DB_HOST,
-      port: process.env.DB_PORT,
-      database: process.env.DB_NAME,
-      user: process.env.DB_USER,
-      ...(process.env.DB_PASSWORD ? { password: process.env.DB_PASSWORD } : {}),
-      ssl: { rejectUnauthorized: false },
-    },
+    connection: (() => {
+      const config = {
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        database: process.env.DB_NAME,
+        user: process.env.DB_USER,
+        ssl: { rejectUnauthorized: false },
+      };
+
+      if (process.env.DB_PASSWORD) {
+        config.password = String(process.env.DB_PASSWORD);
+      }
+
+      console.log("Production DB Config:", JSON.stringify(config, null, 2));
+      return config;
+    })(),
     pool: {
       min: 2,
       max: 10,
