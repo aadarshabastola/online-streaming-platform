@@ -11,6 +11,7 @@ module.exports = {
         port: process.env.DB_PORT || 5432,
         database: process.env.DB_NAME || "streaming_platform",
         user: process.env.DB_USER,
+        password: process.env.DB_PASSWORD, 
       };
 
       if (process.env.DB_PASSWORD) {

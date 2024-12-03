@@ -2,7 +2,7 @@ require('dotenv').config();
 const app = require('./app');
 const knex = require('../db/knex');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // Handle uncaught exceptions
 process.on('uncaughtException', async (error) => {
